@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    icu_name (1.2.4)
+    icu_name (1.2.5)
 
 GEM
   remote: https://rubygems.org/
@@ -32,3 +32,6 @@ DEPENDENCIES
   rake (~> 10.4)
   rdoc (~> 4.2)
   rspec (~> 3.2)
+
+BUNDLED WITH
+   1.14.6
