@@ -10,7 +10,7 @@ version = ICU::Name::VERSION
 desc "Build a new gem for version #{version}"
 task :build do
   system "gem build icu_name.gemspec"
-  system "mv {,pkg/}icu_name-#{version}.gem"
+  system "mv icu_name-#{version}.gem pkg"
 end
 
 desc "Release version #{version} of the gem to rubygems.org"
