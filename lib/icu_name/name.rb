@@ -66,6 +66,7 @@ module ICU
     # Match another name to this object, returning true or false.
     def match(name1='', name2='', opts={})
       other = Name.new(name1, name2)
+      return true if name == other.name
       match_first(first(opts), other.first(opts)) && match_last(last(opts), other.last(opts))
     end
 

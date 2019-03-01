@@ -168,6 +168,23 @@ module ICU
       end
     end
 
+    context "nil last name" do
+      before(:each) do
+        @sarthak1 = Name.new('Sarthak Bathla', nil)
+        @sarthak2 = Name.new("Sarthak", "Bathla")
+        @sarthak3 = Name.new("Sarthak Bathla", "")
+      end
+
+      it "should match concatenation of first and last name" do
+        [@sarthak1, @sarthak2, @sarthak3].each do |sarthak|
+          expect(sarthak.match("Sarthak", "Bathla")).to be_truthy
+          expect(sarthak.match("Sarthak Bathla", "")).to be_truthy
+          expect(sarthak.match("", "Sarthak Bathla")).to be_truthy
+        end
+      end
+    end
+
+
     context "accented characters and capitalisation" do
       it "should downcase upper case accented characters where appropriate" do
         name = Name.new('GEARÓIDÍN', 'UÍ LAIGHLÉIS')
